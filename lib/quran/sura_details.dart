@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:islami/app_theme.dart';
 import 'package:islami/quran/quran_service%20.dart';
 import 'package:islami/quran/sura.dart';
