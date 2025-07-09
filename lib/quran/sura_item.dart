@@ -21,7 +21,7 @@ class SuraItem extends StatelessWidget {
           ),
           child: Text(
             '${sura.num}',
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
         SizedBox(width: 15),

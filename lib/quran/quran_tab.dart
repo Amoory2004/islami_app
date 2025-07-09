@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/quran/quran_service%20.dart';
+import 'package:islami/quran/sura.dart';
+import 'package:islami/quran/sura_details.dart';
 import 'package:islami/quran/sura_item.dart';
 
 class QuranTab extends StatelessWidget {
@@ -20,8 +22,14 @@ class QuranTab extends StatelessWidget {
         Expanded(
           child: ListView.separated(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            itemBuilder: (_, index) =>
-                SuraItem(sura: QuranService.suras[index]),
+            itemBuilder: (_, index) {
+             Sura sura = QuranService.suras[index] ;
+              return InkWell( 
+              child: SuraItem(sura: QuranService.suras[index]),
+              onTap: () =>
+                  Navigator.of(context).pushNamed(SuraDetails.routeName,arguments: sura),
+            );
+            },
             itemCount: QuranService.suras.length,
             separatorBuilder: (_, _) =>
                 Divider(indent: screenWidth * .1, endIndent: screenWidth * .1),
