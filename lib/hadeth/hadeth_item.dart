@@ -51,6 +51,7 @@ class _HadethItemState extends State<HadethItem> {
                       textAlign: TextAlign.center,
                       style: textTheme.headlineSmall!.copyWith(
                         color: AppTheme.black,
+                        fontSize: 22,
                       ),
                     ),
                   ),
@@ -69,12 +70,12 @@ class _HadethItemState extends State<HadethItem> {
                       itemBuilder: (_, index) => Text(
                         textAlign: TextAlign.center,
                         hadeth!.content[index],
-                        style: textTheme.titleMedium!.copyWith(
+                        style: textTheme.titleLarge!.copyWith(
                           color: AppTheme.black,
+                          fontSize: 20,
                         ),
                       ),
                       itemCount: hadeth!.content.length,
-                      physics: NeverScrollableScrollPhysics(),
                     ),
             ),
             Image.asset('assets/images/hadeth_footer.png'),

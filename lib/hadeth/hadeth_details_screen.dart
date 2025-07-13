@@ -3,7 +3,7 @@ import 'package:islami/app_theme.dart';
 import 'package:islami/hadeth/hadeth.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
-  static const routeName = '/details';
+  static const routeName = '/hadeth-details';
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
