@@ -66,6 +66,7 @@ class _HadethItemState extends State<HadethItem> {
               child: hadeth == null
                   ? LoadingIndecator()
                   : ListView.separated(
+                      padding: EdgeInsets.zero,
                       separatorBuilder: (_, _) => SizedBox(height: 4),
                       itemBuilder: (_, index) => Text(
                         textAlign: TextAlign.center,
@@ -78,7 +79,11 @@ class _HadethItemState extends State<HadethItem> {
                       itemCount: hadeth!.content.length,
                     ),
             ),
-            Image.asset('assets/images/hadeth_footer.png'),
+            Image.asset(
+              'assets/images/hadeth_footer.png',
+              height: 50,
+              fit: BoxFit.fitWidth,
+            ),
           ],
         ),
       ),
