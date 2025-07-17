@@ -14,6 +14,8 @@ String get CurrentTasbeha {
 }
 
 class _SebhaItemState extends State<SebhaItem> {
+  double angle = 0;
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
@@ -23,13 +25,18 @@ class _SebhaItemState extends State<SebhaItem> {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
-          child: InkWell(
-            onTap: () {
-              setState(() {
-                count++;
-              });
-            },
-            child: Image.asset('assets/images/sebha.png'),
+          child: AnimatedRotation(
+            turns: angle / 360,
+            duration: Duration(milliseconds: 250),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  count++;
+                  angle += 12;
+                });
+              },
+              child: Image.asset('assets/images/sebha.png'),
+            ),
           ),
         ),
         Positioned(
